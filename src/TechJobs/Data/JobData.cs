@@ -17,6 +17,10 @@ namespace TechJobs.Data
         public JobFieldData<PositionType> PositionTypes { get; set; } = new JobFieldData<PositionType>();
         public JobFieldData<CoreCompetency> CoreCompetencies { get; set; } = new JobFieldData<CoreCompetency>();
 
+        internal static object Find()
+        {
+            throw new NotImplementedException();
+        }
 
         private JobData()
         {
@@ -95,6 +99,7 @@ namespace TechJobs.Data
          */
         public Job Find(int id)
         {
+            
             var results = from j in Jobs
                           where j.ID == id
                           select j;
